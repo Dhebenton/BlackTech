@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="BlackTech International builds intelligent, human-centred systems that unite clarity, precision, and composure in modern enterprise technology.">
+  <title>BlackTech International | Where Technology Meets Human Reasoning</title>
+
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link rel="stylesheet" href="./style.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <script src="https://unpkg.com/@studio-freight/lenis" defer></script>
+<script defer src="./main.js" ></script>
+</head>
+<body>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+  const loadingScreen = document.querySelector('.loading-screen');
+  const circle = document.querySelector('.loader-fill');
+
+  if (!loadingScreen || !circle) return;
+
+  let progress = 0;
+  const total = 150; // stroke-dasharray length
+
+  function animateCircle() {
+    progress += 3;
+    if (progress >= total) {
+      circle.style.strokeDashoffset = 0;
+      clearInterval(interval);
+      setTimeout(() => {
+        loadingScreen.classList.add('finished');
+      }, 500);
+    } else {
+      circle.style.strokeDashoffset = total - progress;
+    }
+  }
+
+  const interval = setInterval(animateCircle, 16);
+});
+
+    </script>
+
+    <div class="loading-screen">
+            <svg class="loader" width="52" height="52" viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg">
+  <circle class="loader-bg" cx="26" cy="26" r="24" stroke="#1C1C1C" stroke-width="1.5" fill="none"></circle>
+  <circle class="loader-fill" cx="26" cy="26" r="24" stroke="white" stroke-width="1.5" stroke-linecap="round" fill="none" stroke-dasharray="150" stroke-dashoffset="150" style="stroke-dashoffset: 0;"></circle>
+</svg>
+
+        </div>
+    <nav class="nav" aria-label="Main navigation">
+        <a class="logo" href="">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 298 36" fill="none">
+                <path  d="M26.762 35.882H13.307V15.1h13.455v20.782Z"></path>
+                <path d="M57.711 35.883H43.059L26.538 0h14.578l16.595 35.883Z"></path>
+                <path d="M13.307 15.1H0V0h13.307v15.1Z"></path>
+                <path d="M87.061 19.861h-7.258l-.039-4.231h5.997c1.061 0 1.921-.129 2.581-.388.673-.259 1.165-.634 1.476-1.126.31-.505.465-1.126.465-1.863 0-.841-.155-1.52-.465-2.037-.311-.518-.803-.893-1.476-1.126-.66-.246-1.514-.369-2.562-.369h-3.687v23.347h-6.327V3.811h10.014c1.695 0 3.209.155 4.542.466 1.333.31 2.465.789 3.397 1.436.944.647 1.662 1.455 2.154 2.426.491.97.737 2.115.737 3.435 0 1.152-.259 2.226-.776 3.222-.505.996-1.32 1.805-2.445 2.426-1.126.621-2.633.957-4.522 1.009l-1.805 1.63Zm-.252 12.208h-8.617l2.29-4.891h6.327c.97 0 1.759-.155 2.367-.466.608-.31 1.054-.731 1.339-1.261.285-.531.427-1.126.427-1.786 0-.776-.136-1.449-.407-2.018-.259-.569-.673-1.009-1.242-1.32-.556-.31-1.3-.466-2.232-.466h-5.667l.039-4.231h6.929l1.475 1.669c1.798-.039 3.234.252 4.308.873 1.087.608 1.87 1.41 2.349 2.406.479.996.718 2.05.718 3.163 0 1.837-.395 3.377-1.184 4.619-.789 1.229-1.96 2.154-3.512 2.775-1.54.621-3.442.932-5.706.932ZM119.743 27.178v4.891h-14.264v-4.891h14.264Zm-12.11-23.367v28.258h-6.327V3.811h6.327ZM134.978 9.187l-7.297 22.882h-6.754l10.461-28.257h4.269l-.679 5.375ZM141.033 32.069l-7.316-22.882-.757-5.376h4.328l10.499 28.258h-6.754ZM140.723 21.55v4.89h-14.731v-4.89h14.731ZM165.991 22.598h6.288c-.103 1.94-.633 3.655-1.591 5.143-.944 1.475-2.258 2.633-3.94 3.474-1.682.828-3.681 1.242-5.997 1.242-1.85 0-3.506-.317-4.968-.951-1.462-.634-2.704-1.54-3.726-2.717-1.009-1.19-1.786-2.62-2.329-4.289-.531-1.682-.796-3.577-.796-5.686v-1.727c0-2.109.278-4.004.835-5.686.556-1.682 1.352-3.118 2.387-4.308 1.035-1.19 2.277-2.102 3.726-2.736 1.449-.634 3.066-.951 4.852-.951 2.406 0 4.438.433 6.094 1.3 1.656.867 2.937 2.057 3.843 3.571.918 1.514 1.468 3.241 1.649 5.182h-6.307c-.052-1.1-.259-2.025-.621-2.775-.362-.763-.919-1.339-1.669-1.727-.751-.388-1.747-.582-2.989-.582-.906 0-1.701.168-2.387.505-.673.336-1.236.86-1.689 1.571-.44.712-.77 1.618-.989 2.718-.22 1.087-.33 2.381-.33 3.882v1.766c0 1.488.097 2.775.291 3.862.194 1.087.504 1.986.931 2.698.44.712 1.003 1.242 1.689 1.592.686.349 1.52.524 2.503.524 1.126 0 2.064-.174 2.814-.524.751-.362 1.327-.905 1.728-1.63.401-.724.634-1.636.698-2.736ZM182.119 3.811v28.257h-6.327V3.811h6.327ZM199.004 3.811l-11.063 14.129-6.443 6.987-1.145-5.88 4.25-6.094 6.638-9.141h7.763ZM191.668 32.069l-7.802-12.906 4.813-3.745 10.48 16.651h-7.491ZM214.297 3.811v28.257h-6.308V3.811h6.308ZM222.895 3.811v4.91h-23.329v-4.91h23.329ZM245.232 27.178v4.89h-15.041v-4.89h15.041ZM232.345 3.811v28.258h-6.325V3.811h6.325ZM243.292 15.184v4.735h-13.101v-4.735h13.101ZM245.253 3.811v4.91h-15.062v-4.91h15.062ZM264.582 22.598h6.287c-.102 1.94-.634 3.655-1.59 5.143-.944 1.475-2.259 2.633-3.94 3.474-1.683.828-3.682 1.242-5.999 1.242-1.85 0-3.506-.317-4.967-.951-1.463-.634-2.704-1.54-3.728-2.717-.999-1.19-1.776-2.62-2.318-4.289-.532-1.682-.797-3.577-.797-5.686v-1.727c0-2.109.278-4.004.835-5.686.556-1.682 1.352-3.118 2.388-4.308 1.034-1.19 2.277-2.102 3.725-2.736 1.449-.634 3.067-.951 4.852-.951 2.407 0 4.438.433 6.095 1.3 1.656.867 2.936 2.057 3.843 3.571.918 1.514 1.468 3.241 1.65 5.182h-6.308c-.052-1.1-.259-2.025-.621-2.775-.363-.763-.918-1.339-1.669-1.727-.749-.388-1.746-.582-2.988-.582-.906 0-1.702.168-2.388.505-.673.336-1.236.86-1.688 1.571-.44.712-.77 1.618-.99 2.718-.219 1.087-.33 2.381-.33 3.882v1.766c0 1.488.099 2.775.292 3.862.193 1.087.504 1.986.931 2.698.44.712 1.003 1.242 1.689 1.592.686.349 1.52.524 2.502.524 1.126 0 2.064-.174 2.815-.524.751-.362 1.326-.905 1.728-1.63.401-.724.633-1.636.698-2.736ZM293.344 15.184v4.891H278.71v-4.891h14.634ZM280.709 3.811v28.257h-6.326V3.811h6.326ZM297.71 3.811v28.257h-6.306V3.811h6.306Z"></path>
+            </svg>
+        </a>
+        <ul class="nav-link-wrap">
+            <li><a href="" class="nav-link">Home</a></li>
+            <li><a href="" class="nav-link">Method</a></li>
+            <li><a href="" class="nav-link">Systems</a></li>
+            <li><a href="" class="nav-link">Insights</a></li>
+            <li><a href="" class="nav-link">FAQ</a></li>
+            <li><a href="" class="nav-link">Contact</a></li>
+        </ul>
+        <a href="" class="button-main dark light">Success Stories</a>
+        <button class="nav-humburger">
+            <svg width="14" height="2" viewBox="0 0 14 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect y="0.40625" width="14" height="1.3125" rx="0.65625"></rect>
+            </svg>
+            <svg width="14" height="2" viewBox="0 0 14 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect y="0.40625" width="14" height="1.3125" rx="0.65625"></rect>
+            </svg>
+            <svg width="14" height="2" viewBox="0 0 14 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect y="0.40625" width="14" height="1.3125" rx="0.65625"></rect>
+            </svg>
+        </button>
+    </nav>
+    <section class="hero">
+        <div class="hero-pin">
+            <div class="hero-box" id="heroBox">
+                <canvas id="heroCanvas" width="1920" height="1080"></canvas>
+            </div>
+        </div>
+        <div class="hero-container">
+            <h1>Where technology meets human reasoning.</h1>
+            <p>We build systems that move as intelligently as the people behind them, measured, <br>adaptive, and quietly exact, designed for clarity, trust, and continuity.</p>
+            <div class="f-row scroll-indicator g8">
+                <svg width="17" height="25" viewBox="0 0 17 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="0.6" y="0.6" width="15.1043" height="23.8" rx="7.55217" stroke="white" stroke-width="1.2"/>
+                    <rect x="7.74452" y="7.20155" width="0.815217" height="4.07609" rx="0.407609" stroke="white" stroke-width="0.815217"/>
+                </svg>
+
+                <div class="text">Scroll Down</div>
+            </div>
+        </div>
+    </section>
+    <section class="container scroll-text-section">
+        <div class="scroll-text-wrap">
+            <p id="scrollText" class="scroll-text">We create outreach systems that connect businesses with precision and purpose. Every layer, from targeting and messaging to automation and data, is built to move smoothly in sync with your goals. Our work combines technology and reasoning to make complex processes feel simple, turning outreach into something measured, adaptive, and human.</p>
+        </div>
+    </section>
+    <section class="container process sec-col">
+        <div class="j-s-b bottom">
+            <div class="block">
+                <p class="tag">Our Operating System</p>
+                <h2>The Collaborative Flow</h2>
+                <p class="p">A framework engineered for predictable outreach, where strategy, <br>language, and infrastructure move as one fluid system.</p>
+            </div>
+            <a href="" class="button-main dark">Learn More</a>
+        </div>
+        <div class="slider js-flickity" data-flickity-options='{"cellAlign":"left","pageDots":false,"prevNextButtons":false }'>
+            <div class="process-card">
+                <div class="trans background"></div>
+                <p class="step">01</p>
+                <h3>Discovery</h3>
+                <div class="process-answer-wrap">
+                    <p class="process">We begin with understanding, not assumption. Discovery aligns intent, capability, and context before a single system is built. </p>
+                </div>
+            </div>
+            <div class="process-card">
+                <p class="step">01</p>
+                <div class="trans background"></div>
+                <h3>Discovery</h3>
+                <div class="process-answer-wrap">
+                    <p class="process">We begin with understanding, not assumption. Discovery aligns intent, capability, and context before a single system is built. </p>
+                </div>
+            </div>
+            <div class="process-card">
+                <p class="step">01</p>
+                <div class="trans background"></div>
+                <h3>Discovery</h3>
+                <div class="process-answer-wrap">
+                    <p class="process">We begin with understanding, not assumption. Discovery aligns intent, capability, and context before a single system is built. </p>
+                </div>
+            </div>
+            <div class="process-card">
+                <p class="step">01</p>
+                <div class="trans background"></div>
+                <h3>Discovery</h3>
+                <div class="process-answer-wrap">
+                    <p class="process">We begin with understanding, not assumption. Discovery aligns intent, capability, and context before a single system is built. </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="container faq-section sec-row">
+        <div class="block button">
+            <p class="tag">FAQ</p>
+            <h2>Frequently Asked Questions</h2>
+            <p class="p">Straightforward responses to help you understand <br>how we work.</p>
+            <a href="" class="button-main">Request A Call</a>
+        </div>
+        <div class="faq-wrap">
+            <div class="faq open">
+                <button class="faq-toggle j-s-b">
+                    <h3 class="trans">Building Trust Through Structured Outreach</h3>
+                    <svg class="trans" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="16.6" y="16.6" width="16.2" height="16.2" rx="8.1" transform="rotate(-180 16.6 16.6)" stroke="black" stroke-width="0.8"/>
+                        <path d="M6.14165 7.45865L8.4999 5.10039M8.4999 5.10039L10.8582 7.45865M8.4999 5.10039L8.4999 11.9004" stroke="black" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <div class="faq-answer trans"><p>We don’t just run campaigns — we build systems. Every framework we create is designed to operate sustainably, blending automation, data, and human reasoning. The result is consistent, high-quality outreach without noise or repetition.</p></div>
+            </div>
+            <div class="faq">
+                <button class="faq-toggle j-s-b">
+                    <h3 class="trans">Building Trust Through Structured Outreach</h3>
+                    <svg class="trans" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="16.6" y="16.6" width="16.2" height="16.2" rx="8.1" transform="rotate(-180 16.6 16.6)" stroke="black" stroke-width="0.8"/>
+                        <path d="M6.14165 7.45865L8.4999 5.10039M8.4999 5.10039L10.8582 7.45865M8.4999 5.10039L8.4999 11.9004" stroke="black" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <div class="faq-answer trans"><p>We don’t just run campaigns — we build systems. Every framework we create is designed to operate sustainably, blending automation, data, and human reasoning. The result is consistent, high-quality outreach without noise or repetition.</p></div>
+            </div>
+            <div class="faq">
+                <button class="faq-toggle j-s-b">
+                    <h3 class="trans">Building Trust Through Structured Outreach</h3>
+                    <svg class="trans" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="16.6" y="16.6" width="16.2" height="16.2" rx="8.1" transform="rotate(-180 16.6 16.6)" stroke="black" stroke-width="0.8"/>
+                        <path d="M6.14165 7.45865L8.4999 5.10039M8.4999 5.10039L10.8582 7.45865M8.4999 5.10039L8.4999 11.9004" stroke="black" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <div class="faq-answer trans"><p>We don’t just run campaigns — we build systems. Every framework we create is designed to operate sustainably, blending automation, data, and human reasoning. The result is consistent, high-quality outreach without noise or repetition.</p></div>
+            </div>
+            <div class="faq">
+                <button class="faq-toggle j-s-b">
+                    <h3 class="trans">Building Trust Through Structured Outreach</h3>
+                    <svg class="trans" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="16.6" y="16.6" width="16.2" height="16.2" rx="8.1" transform="rotate(-180 16.6 16.6)" stroke="black" stroke-width="0.8"/>
+                        <path d="M6.14165 7.45865L8.4999 5.10039M8.4999 5.10039L10.8582 7.45865M8.4999 5.10039L8.4999 11.9004" stroke="black" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <div class="faq-answer trans"><p>We don’t just run campaigns — we build systems. Every framework we create is designed to operate sustainably, blending automation, data, and human reasoning. The result is consistent, high-quality outreach without noise or repetition.</p></div>
+            </div>
+            <div class="faq">
+                <button class="faq-toggle j-s-b">
+                    <h3 class="trans">Building Trust Through Structured Outreach</h3>
+                    <svg class="trans" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="16.6" y="16.6" width="16.2" height="16.2" rx="8.1" transform="rotate(-180 16.6 16.6)" stroke="black" stroke-width="0.8"/>
+                        <path d="M6.14165 7.45865L8.4999 5.10039M8.4999 5.10039L10.8582 7.45865M8.4999 5.10039L8.4999 11.9004" stroke="black" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <div class="faq-answer trans"><p>We don’t just run campaigns — we build systems. Every framework we create is designed to operate sustainably, blending automation, data, and human reasoning. The result is consistent, high-quality outreach without noise or repetition.</p></div>
+            </div>
+        </div>
+    </section>
+    <section class="container sec-col">
+        <div class="block center ">
+            <p class="tag">what we’ve accomplished</p>
+            <h2>Success stories</h2>
+        </div>
+        <div class="success-stories-slider" data-flickity-options='{"cellAlign":"left","pageDots":false,"prevNextButtons":false }'>
+            <div class="success-story">
+                <div class="client-wrap">
+                    <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="100%" height="100%" rx="18" fill="white"/>
+                        <rect width="100%" height="100%" rx="18" fill="#212121"/>
+                        <rect width="100%" height="100%" rx="18" fill="url(#paint0_linear_58_302)" fill-opacity="0.9"/>
+                        <path opacity="0.8" d="M18.1227 10.2788C18.0849 10.3433 18.0654 10.4167 18.0662 10.4913C18.0669 10.5658 18.088 10.6388 18.127 10.7025C18.7748 11.7449 19.6718 12.6131 20.7386 13.2303C21.8055 13.8476 23.0094 14.1949 24.244 14.2415C24.3202 14.2436 24.3956 14.2251 24.462 14.1878C24.5284 14.1506 24.5832 14.0961 24.6207 14.0302L26.2912 11.1338C26.4557 10.8474 26.2479 10.4869 25.9166 10.4537C24.8564 10.3436 23.8318 10.0116 22.9107 9.47976C21.9896 8.94789 21.1931 8.22823 20.5738 7.36843C20.3789 7.09809 19.9567 7.10024 19.7899 7.38881L18.1227 10.2788ZM24.7473 21.755C24.6712 21.7558 24.5962 21.7358 24.5306 21.6975C24.465 21.6591 24.4112 21.6037 24.3749 21.5373C23.7935 20.4474 23.4895 19.2332 23.4895 18.0005C23.4895 16.7676 23.7935 15.5535 24.3749 14.4636C24.4112 14.3972 24.465 14.3418 24.5306 14.3034C24.5962 14.265 24.6712 14.2451 24.7473 14.2458H28.0798C28.4132 14.2458 28.6243 14.6041 28.4879 14.9045C28.0474 15.8783 27.8197 16.9333 27.8197 18.0005C27.8197 19.0676 28.0474 20.1227 28.4879 21.0964C28.6243 21.3967 28.4121 21.755 28.0798 21.755H24.7473ZM18.1227 25.7221C18.0849 25.6576 18.0654 25.5842 18.0662 25.5096C18.0669 25.435 18.088 25.3621 18.127 25.2983C18.7748 24.256 19.6718 23.3878 20.7386 22.7705C21.8055 22.1533 23.0094 21.806 24.244 21.7594C24.3202 21.7573 24.3956 21.7758 24.462 21.813C24.5284 21.8503 24.5832 21.9048 24.6207 21.9707L26.2912 24.8671C26.4557 25.1536 26.2479 25.514 25.9166 25.5473C24.8564 25.6573 23.8318 25.9893 22.9107 26.5211C21.9896 27.053 21.1931 27.7726 20.5738 28.6325C20.3789 28.9028 19.9567 28.9006 19.7899 28.6121L18.1227 25.7221ZM17.878 25.7221C17.9157 25.6576 17.9353 25.5842 17.9345 25.5096C17.9337 25.435 17.9128 25.3621 17.8737 25.2983C17.2259 24.256 16.329 23.3878 15.2621 22.7705C14.1952 22.1533 12.9913 21.806 11.7568 21.7594C11.6805 21.7573 11.6051 21.7758 11.5387 21.813C11.4723 21.8503 11.4174 21.9048 11.38 21.9707L9.70948 24.8671C9.54493 25.1536 9.75279 25.514 10.0841 25.5473C11.1443 25.6573 12.1689 25.9893 13.09 26.5211C14.0111 27.053 14.8076 27.7726 15.4269 28.6325C15.6218 28.9028 16.044 28.9006 16.2107 28.6121L17.878 25.7221ZM11.2533 21.755C11.3295 21.7558 11.4045 21.7358 11.4701 21.6975C11.5357 21.6591 11.5895 21.6037 11.6258 21.5373C12.2072 20.4474 12.5111 19.2332 12.5111 18.0005C12.5111 16.7676 12.2072 15.5535 11.6258 14.4636C11.5895 14.3972 11.5357 14.3418 11.4701 14.3034C11.4045 14.265 11.3295 14.2451 11.2533 14.2458H7.91988C7.58751 14.2458 7.37639 14.6041 7.51172 14.9045C7.95221 15.8783 8.17993 16.9333 8.17993 18.0005C8.17993 19.0676 7.95221 20.1227 7.51172 21.0964C7.37639 21.3967 7.58751 21.755 7.91988 21.755H11.2533ZM17.878 10.2788C17.9157 10.3433 17.9353 10.4167 17.9345 10.4913C17.9337 10.5658 17.9128 10.6388 17.8737 10.7025C17.2259 11.7449 16.329 12.6131 15.2621 13.2303C14.1952 13.8476 12.9913 14.1949 11.7568 14.2415C11.6805 14.2436 11.6051 14.2251 11.5387 14.1878C11.4723 14.1506 11.4174 14.0961 11.38 14.0302L9.70948 11.1338C9.54493 10.8474 9.75279 10.4869 10.0841 10.4537C11.1443 10.3436 12.1689 10.0116 13.09 9.47976C14.0111 8.94789 14.8076 8.22823 15.4269 7.36843C15.6218 7.09809 16.044 7.10024 16.2107 7.38881L17.878 10.2788Z" fill="white"/>
+                        <defs>
+                            <linearGradient id="paint0_linear_58_302" x1="37.0286" y1="29.8316" x2="-3.83804" y2="23.0172" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#FC5FFC"/>
+                            <stop offset="1" stop-color="#FC5F02"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                    <div>
+                        <p class="client">Daniil Hebenton</p>
+                        <p class="client-role">Founder & Lead Strategist @Goldline</p>
+                    </div>
+                </div>
+                <div class="success-story-wrap">
+                    <p>Our outbound process wasn’t broken, but it was messy and too many disconnected tools and no rhythm. BlackTech analyzed everything and rebuilt it from the ground up.</p>
+                    <p>Now, targeting, automation, and copy all work together like a single machine. High-quality leads come in consistently, week after week.</p>
+                    <p>What really stood out was how collaborative they were. They didn’t force their system on us, they shaped it around ours. That balance of technical precision and human understanding is hard to find.</p>
+                </div>
+                <div class="devider"></div>
+                <div class="metrics-wrap">
+                    <div class="metric">
+                        <p class="stat">4.2x</p>
+                        <p class="stat-prod">Growth in qualified leads</p>
+                    </div>
+                    <div class="metric">
+                        <p class="stat">3x</p>
+                        <p class="stat-prod">Increase in booked calls</p>
+                    </div>
+                    <div class="metric">
+                        <p class="stat">2x</p>
+                        <p class="stat-prod">Faster campaign turnaround</p>
+                    </div>
+                    <div class="metric">
+                        <p class="stat">35%</p>
+                        <p class="stat-prod">Drop in acquisition costs</p>
+                    </div>
+                    <div class="metric">
+                        <p class="stat">100%</p>
+                        <p class="stat-prod">End-to-end visibility across campaigns</p>
+                    </div>
+                </div>
+            </div>
+            <div class="success-story two">
+                <div class="client-wrap">
+                    <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="100%" height="100%" rx="18" fill="white"/>
+                        <rect width="100%" height="100%" rx="18" fill="#212121"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M21.331 12.3957C21.5696 12.1571 21.4006 11.749 21.0631 11.749H7.54951C7.21201 11.749 7.04299 12.1571 7.28164 12.3957L11.07 16.1841C11.141 16.2551 11.1809 16.3515 11.1809 16.4519V21.6312C11.1809 21.9687 11.589 22.1377 11.8276 21.8991L21.331 12.3957Z" fill="white"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M14.6689 23.6038C14.4302 23.8425 14.5993 24.2505 14.9368 24.2505H28.4503C28.7878 24.2505 28.9569 23.8425 28.7182 23.6038L24.9299 19.8155C24.8588 19.7444 24.8189 19.6481 24.8189 19.5476V14.3684C24.8189 14.0309 24.4109 13.8618 24.1722 14.1005L14.6689 23.6038Z" fill="white"/>
+                    </svg>
+                    <div>
+                        <p class="client">Ethan Cole</p>
+                        <p class="client-role">Co-Founder @Hypeify</p>
+                    </div>
+                </div>
+                <div class="success-story-wrap">
+                    <p>When we first brought BlackTech in, we were in chaos. Product development on one side, outreach on the other, both half-working. Our messaging was inconsistent, our beta list stagnant, and the whole thing felt directionless.</p>
+                    <p>They came in, built a system that quietly ran in the background, and changed everything. It nurtured leads automatically while we focused on the product. Within a few weeks, we saw genuine growth for the first time steady, trackable, and transparent. The process was smooth, calm, and efficient from start to finish.</p>
+                </div>
+                <div class="devider"></div>
+                <div class="metrics-wrap">
+                    <div class="metric">
+                        <p class="stat">3.6x</p>
+                        <p class="stat-prod">More qualified leads</p>
+                    </div>
+                    <div class="metric">
+                        <p class="stat">2.5x</p>
+                        <p class="stat-prod">Increase in booked calls</p>
+                    </div>
+                    <div class="metric">
+                        <p class="stat">40%</p>
+                        <p class="stat-prod">Faster Turn Around</p>
+                    </div>
+                    <div class="metric">
+                        <p class="stat">28%</p>
+                        <p class="stat-prod">Lower Acquisition Cost</p>
+                    </div>
+                    <div class="metric">
+                        <p class="stat">95%</p>
+                        <p class="stat-prod">Campaign Visibility</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+     <div class="dark-wrap">
+        <video id="footerVideo" autoplay="" loop="" muted="" playsinline="">
+            <source src="./assets/footer-video.mp4" type="video/mp4">
+        </video>
+        <div class="footer-blur"></div>
+            <section class="container sec-col">
+                <div class="j-s-b bottom">
+                    <div class="block">
+                        <p class="tag">Blogs</p>
+                        <h2>Insights that move with intention</h2>
+                    </div>
+                    <a href="" class="button-main dark light">Explore Insights</a>
+                </div>
+                <div class="blog-slider js-flickity"
+                    data-flickity-options='{
+                    "cellAlign": "left",
+                    "contain": true,
+                    "pageDots": false,
+                    "prevNextButtons": false,
+                    "imagesLoaded": true
+                    }'>
+                    <a class="blog-card" href="">
+                        <img src="./assets//blog-image/blog-thumbnail-one.png" class="thumbnail" alt="">
+                        <h3>Building Trust Through Structured Outreach</h3>
+                        <div>
+                            <img src="./assets/blog-image/carlos.png" alt="">
+                            <p>August 7th</p>
+                            <p class="sep">/</p>
+                            <p>System & Strategy</p>
+                        </div>
+                    </a>
+                    <a class="blog-card" href="">
+                        <img src="./assets//blog-image/blog-thumbnail-one.png" class="thumbnail" alt="">
+                        <h3>Building Trust Through Structured Outreach</h3>
+                        <div>
+                            <img src="./assets/blog-image/carlos.png" alt="">
+                            <p>August 7th</p>
+                            <p class="sep">/</p>
+                            <p>System & Strategy</p>
+                        </div>
+                    </a>
+                    <a class="blog-card" href="">
+                        <img src="./assets//blog-image/blog-thumbnail-one.png" class="thumbnail" alt="">
+                        <h3>Building Trust Through Structured Outreach</h3>
+                        <div>
+                            <img src="./assets/blog-image/carlos.png" alt="">
+                            <p>August 7th</p>
+                            <p class="sep">/</p>
+                            <p>System & Strategy</p>
+                        </div>
+                    </a>
+                    <a class="blog-card" href="">
+                        <img src="./assets//blog-image/blog-thumbnail-one.png" class="thumbnail" alt="">
+                        <h3>Building Trust Through Structured Outreach</h3>
+                        <div>
+                            <img src="./assets/blog-image/carlos.png" alt="">
+                            <p>August 7th</p>
+                            <p class="sep">/</p>
+                            <p>System & Strategy</p>
+                        </div>
+                    </a>
+                </div>
+            </section>
+            <footer class="container">
+                <div class="cta">
+                    <h2>See how clarity performs.</h2>
+                    <p>Every great system starts with one conversation.</p>
+                    <a href="" class="button-main">Request A Call</a>
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 298 36" fill="none">
+                    <path fill="#fff" d="M26.762 35.882H13.307V15.1h13.455v20.782Z"></path>
+                    <path fill="#fff" d="M57.711 35.883H43.059L26.538 0h14.578l16.595 35.883Z"></path>
+                    <path fill="#fff" d="M13.307 15.1H0V0h13.307v15.1Z"></path>
+                    <path fill="#fff" d="M87.061 19.861h-7.258l-.039-4.231h5.997c1.061 0 1.921-.129 2.581-.388.673-.259 1.165-.634 1.476-1.126.31-.505.465-1.126.465-1.863 0-.841-.155-1.52-.465-2.037-.311-.518-.803-.893-1.476-1.126-.66-.246-1.514-.369-2.562-.369h-3.687v23.347h-6.327V3.811h10.014c1.695 0 3.209.155 4.542.466 1.333.31 2.465.789 3.397 1.436.944.647 1.662 1.455 2.154 2.426.491.97.737 2.115.737 3.435 0 1.152-.259 2.226-.776 3.222-.505.996-1.32 1.805-2.445 2.426-1.126.621-2.633.957-4.522 1.009l-1.805 1.63Zm-.252 12.208h-8.617l2.29-4.891h6.327c.97 0 1.759-.155 2.367-.466.608-.31 1.054-.731 1.339-1.261.285-.531.427-1.126.427-1.786 0-.776-.136-1.449-.407-2.018-.259-.569-.673-1.009-1.242-1.32-.556-.31-1.3-.466-2.232-.466h-5.667l.039-4.231h6.929l1.475 1.669c1.798-.039 3.234.252 4.308.873 1.087.608 1.87 1.41 2.349 2.406.479.996.718 2.05.718 3.163 0 1.837-.395 3.377-1.184 4.619-.789 1.229-1.96 2.154-3.512 2.775-1.54.621-3.442.932-5.706.932ZM119.743 27.178v4.891h-14.264v-4.891h14.264Zm-12.11-23.367v28.258h-6.327V3.811h6.327ZM134.978 9.187l-7.297 22.882h-6.754l10.461-28.257h4.269l-.679 5.375ZM141.033 32.069l-7.316-22.882-.757-5.376h4.328l10.499 28.258h-6.754ZM140.723 21.55v4.89h-14.731v-4.89h14.731ZM165.991 22.598h6.288c-.103 1.94-.633 3.655-1.591 5.143-.944 1.475-2.258 2.633-3.94 3.474-1.682.828-3.681 1.242-5.997 1.242-1.85 0-3.506-.317-4.968-.951-1.462-.634-2.704-1.54-3.726-2.717-1.009-1.19-1.786-2.62-2.329-4.289-.531-1.682-.796-3.577-.796-5.686v-1.727c0-2.109.278-4.004.835-5.686.556-1.682 1.352-3.118 2.387-4.308 1.035-1.19 2.277-2.102 3.726-2.736 1.449-.634 3.066-.951 4.852-.951 2.406 0 4.438.433 6.094 1.3 1.656.867 2.937 2.057 3.843 3.571.918 1.514 1.468 3.241 1.649 5.182h-6.307c-.052-1.1-.259-2.025-.621-2.775-.362-.763-.919-1.339-1.669-1.727-.751-.388-1.747-.582-2.989-.582-.906 0-1.701.168-2.387.505-.673.336-1.236.86-1.689 1.571-.44.712-.77 1.618-.989 2.718-.22 1.087-.33 2.381-.33 3.882v1.766c0 1.488.097 2.775.291 3.862.194 1.087.504 1.986.931 2.698.44.712 1.003 1.242 1.689 1.592.686.349 1.52.524 2.503.524 1.126 0 2.064-.174 2.814-.524.751-.362 1.327-.905 1.728-1.63.401-.724.634-1.636.698-2.736ZM182.119 3.811v28.257h-6.327V3.811h6.327ZM199.004 3.811l-11.063 14.129-6.443 6.987-1.145-5.88 4.25-6.094 6.638-9.141h7.763ZM191.668 32.069l-7.802-12.906 4.813-3.745 10.48 16.651h-7.491ZM214.297 3.811v28.257h-6.308V3.811h6.308ZM222.895 3.811v4.91h-23.329v-4.91h23.329ZM245.232 27.178v4.89h-15.041v-4.89h15.041ZM232.345 3.811v28.258h-6.325V3.811h6.325ZM243.292 15.184v4.735h-13.101v-4.735h13.101ZM245.253 3.811v4.91h-15.062v-4.91h15.062ZM264.582 22.598h6.287c-.102 1.94-.634 3.655-1.59 5.143-.944 1.475-2.259 2.633-3.94 3.474-1.683.828-3.682 1.242-5.999 1.242-1.85 0-3.506-.317-4.967-.951-1.463-.634-2.704-1.54-3.728-2.717-.999-1.19-1.776-2.62-2.318-4.289-.532-1.682-.797-3.577-.797-5.686v-1.727c0-2.109.278-4.004.835-5.686.556-1.682 1.352-3.118 2.388-4.308 1.034-1.19 2.277-2.102 3.725-2.736 1.449-.634 3.067-.951 4.852-.951 2.407 0 4.438.433 6.095 1.3 1.656.867 2.936 2.057 3.843 3.571.918 1.514 1.468 3.241 1.65 5.182h-6.308c-.052-1.1-.259-2.025-.621-2.775-.363-.763-.918-1.339-1.669-1.727-.749-.388-1.746-.582-2.988-.582-.906 0-1.702.168-2.388.505-.673.336-1.236.86-1.688 1.571-.44.712-.77 1.618-.99 2.718-.219 1.087-.33 2.381-.33 3.882v1.766c0 1.488.099 2.775.292 3.862.193 1.087.504 1.986.931 2.698.44.712 1.003 1.242 1.689 1.592.686.349 1.52.524 2.502.524 1.126 0 2.064-.174 2.815-.524.751-.362 1.326-.905 1.728-1.63.401-.724.633-1.636.698-2.736ZM293.344 15.184v4.891H278.71v-4.891h14.634ZM280.709 3.811v28.257h-6.326V3.811h6.326ZM297.71 3.811v28.257h-6.306V3.811h6.306Z"></path>
+                </svg>
+                <form action="" class="newsletter">
+                    <label for="">Subscribe to our newsletter</label>
+                    <input placeholder="adam@widen.com" class="newsletter-input" type="text">
+                    <button class="newsletter-button">Subscribe</button>
+                </form>
+                <nav class="footer-nav">
+                    <div class="nav-group">
+                        <h3>Navigation</h3>
+                        <ul class="nav-links-wrap">
+                            <li><a href="" class="footer-nav">Home</a></li>
+                            <li><a href="" class="footer-nav">Method</a></li>
+                            <li><a href="" class="footer-nav">Systems</a></li>
+                        </ul>
+                    </div>
+                    <div class="nav-group">
+                        <h3>Resources</h3>
+                        <ul class="nav-links-wrap">
+                            <li><a href="" class="footer-nav">Success Stories</a></li>
+                            <li><a href="" class="footer-nav">Insights</a></li>
+                            <li><a href="" class="footer-nav">FAQ</a></li>
+                        </ul>
+                    </div>
+                    <div class="nav-group">
+                        <h3>Company</h3>
+                        <ul class="nav-links-wrap">
+                            <li><a href="" class="footer-nav">About</a></li>
+                            <li><a href="" class="footer-nav">Our Vision</a></li>
+                            <li><a href="" class="footer-nav">Careers</a></li>
+                        </ul>
+                    </div>
+                    <div class="nav-group">
+                        <h3>Legal</h3>
+                        <ul class="nav-links-wrap">
+                            <li><a href="" class="footer-nav">Privacy Policy</a></li>
+                            <li><a href="" class="footer-nav">Terms of Service</a></li>
+                            <li><a href="" class="footer-nav">Cookie Policy</a></li>
+                        </ul>
+                    </div>
+                    <div class="nav-group">
+                        <h3>Contact</h3>
+                        <ul class="nav-links-wrap">
+                            <li><a href="" class="footer-nav">Email</a></li>
+                            <li><a href="" class="footer-nav">Instagram</a></li>
+                            <li><a href="" class="footer-nav">LinkedIn</a></li>
+                        </ul>
+                    </div>
+                    <div class="nav-group">
+                        <h3>Whatsaspp</h3>
+                        <ul class="nav-links-wrap">
+                            <li><a href="" class="footer-nav">(Global) +44 7845 819731  </a></li>
+                            <li><a href="" class="footer-nav">(Spain) +34 672 918 405  </a></li>
+                            <li><a href="" class="footer-nav">(Canada) +1 437 826 1937 </a></li>
+                        </ul>
+                    </div>
+                </nav>
+                <p class="copyright">© 2025 BlackTech. Engineered with precision in Estonia.</p>
+            </footer>
+        </div>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flickity/1.0.0/flickity.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/1.0.0/flickity.pkgd.js" ></script>
+    <script>
+document.addEventListener('DOMContentLoaded', () => {
+  const cta = document.querySelector('.cta');
+  if (!cta) return;
+
+  let targetX = 21;
+  let targetY = 99;
+  let currentX = targetX;
+  let currentY = targetY;
+
+  function animate() {
+    currentX += (targetX - currentX) * 0.08;
+    currentY += (targetY - currentY) * 0.08;
+    cta.style.setProperty('--x', `${currentX.toFixed(1)}%`);
+    cta.style.setProperty('--y', `${currentY.toFixed(1)}%`);
+    requestAnimationFrame(animate);
+  }
+
+  animate();
+
+  cta.addEventListener('mousemove', e => {
+    const rect = cta.getBoundingClientRect();
+    targetX = ((e.clientX - rect.left) / rect.width) * 100;
+    targetY = ((e.clientY - rect.top) / rect.height) * 100;
+  });
+});
+
+
+    </script>
+    
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+  const faqs = document.querySelectorAll('.faq');
+  const faqSection = document.querySelector('.faq-section');
+
+  const first = faqs[0];
+  if (first) {
+    const wrap = first.querySelector('.faq-answer');
+    const inner = wrap.querySelector('p');
+    wrap.style.height = inner.scrollHeight + parseInt(getComputedStyle(inner).marginTop) + 'px';
+    first.classList.add('open');
+  }
+
+  faqs.forEach(faq => {
+    const toggle = faq.querySelector('.faq-toggle');
+    const wrap = faq.querySelector('.faq-answer');
+    const inner = wrap.querySelector('p');
+
+    faq.addEventListener('mouseenter', () => {
+      faqs.forEach(f => {
+        if (f !== faq) {
+          f.classList.remove('open');
+          f.querySelector('.faq-answer').style.height = '0px';
+        }
+      });
+
+      const totalHeight = inner.scrollHeight + parseInt(getComputedStyle(inner).marginTop);
+      wrap.style.height = totalHeight + 'px';
+      faq.classList.add('open');
+    });
+
+    faq.addEventListener('mouseleave', () => {
+      // keep the current one open; no collapse on leave
+    });
+  });
+});
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+  const blogCards = document.querySelectorAll('.blog-card');
+
+  blogCards.forEach(card => {
+    card.addEventListener('mouseenter', () => {
+      blogCards.forEach(other => {
+        if (other !== card) other.classList.add('off');
+      });
+    });
+
+    card.addEventListener('mouseleave', () => {
+      blogCards.forEach(other => {
+        other.classList.remove('off');
+      });
+    });
+  });
+});
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const nav = document.querySelector('.nav');
+  const hero = document.querySelector('.hero');
+  const darkWrapper = document.querySelector('.dark-wrapper');
+  if (!nav) return;
+
+  // set initial state
+  nav.classList.add('no-background');
+
+  let lastScroll = window.scrollY;
+
+  window.addEventListener('scroll', () => {
+    const currentScroll = window.scrollY;
+    const heroBottom = hero ? hero.getBoundingClientRect().bottom : 0;
+    const darkTop = darkWrapper ? darkWrapper.getBoundingClientRect().top : Infinity;
+
+    // scroll direction
+    if (currentScroll > lastScroll) {
+      nav.classList.add('off');
+    } else {
+      nav.classList.remove('off');
+    }
+
+    // dark active between hero end and dark-wrapper start
+    if (heroBottom <= 0 && darkTop > 0) {
+      nav.classList.add('dark');
+    } else {
+      nav.classList.remove('dark');
+    }
+
+    // no background only at scroll position 0
+    if (window.scrollY === 0) {
+      nav.classList.add('no-background');
+    } else {
+      nav.classList.remove('no-background');
+    }
+
+    lastScroll = currentScroll;
+  });
+});
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const slider = document.querySelector('.success-stories-slider');
+  if (!slider) return;
+
+  let flickityInstance = null;
+
+  function initFlickity() {
+    if (!flickityInstance) {
+      flickityInstance = new Flickity(slider, {
+        cellAlign: 'left',
+        pageDots: false,
+        prevNextButtons: false,
+        contain: true
+      });
+    }
+  }
+
+  function destroyFlickity() {
+    if (flickityInstance) {
+      flickityInstance.destroy();
+      flickityInstance = null;
+    }
+  }
+
+  function handleResize() {
+    if (window.innerWidth <= 1026) {
+      initFlickity();
+    } else {
+      destroyFlickity();
+    }
+  }
+
+  handleResize();
+  window.addEventListener('resize', handleResize);
+});
+</script>
+
+
+
+</body>
